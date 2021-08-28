@@ -8,10 +8,14 @@
     <title>mouse move</title>
 
     <script>
-        function mouseMove(e) {
-            console.log(e.clientX, e.clientY)
+        window.onload = function () {
+            let h1 = document.getElementsByTagName('h1')[0];
+            function mouseMove(e) {
+                // console.log(e.clientX, e.clientY);
+                h1.innerHTML = "x: " + e.clientX + " y: " + e.clientY;
+            }
+            window.addEventListener("mousemove", mouseMove)
         }
-        window.addEventListener("mousemove", mouseMove)
     </script>
     <style>
         body {
