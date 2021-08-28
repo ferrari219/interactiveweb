@@ -10,20 +10,33 @@
     <script>
         window.onload = function () {
             let h1 = document.getElementsByTagName('h1')[0];
+            let cursor = document.querySelector('.cursor_item');
             function mouseMove(e) {
                 // console.log(e.clientX, e.clientY);
                 h1.innerHTML = "x: " + e.clientX + " y: " + e.clientY;
+                // console.log(cursor);
+                cursor.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)"
             }
             window.addEventListener("mousemove", mouseMove)
         }
     </script>
     <style>
         body {
+            position: relative;
             background-color: black;
         }
 
         h1 {
             color: white;
+        }
+
+        .cursor_item {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
         }
     </style>
 </head>
@@ -31,7 +44,7 @@
 <body>
 
     <h1>test</h1>
-
+    <div class="cursor_item"></div>
 </body>
 
 </html>
